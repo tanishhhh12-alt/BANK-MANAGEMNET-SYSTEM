@@ -15,14 +15,11 @@ import javax.swing.JOptionPane;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
-import com.toedter.calendar.JDateChooser;
-
 public class signup2 extends  JFrame implements  ActionListener{
 
     
-    JTextField addressTextField,cityTextField,stateTextField,pcTextField;
+    JTextField addressTextField,cityTextField;
     JRadioButton marrieRadioButton,unmarrButton,unmarrButton2,marrieRadioButton2;
-    JDateChooser dateChooser;
     JButton next;
     JComboBox religion, category,income,education,occupation;
     String formno;
@@ -212,9 +209,14 @@ public class signup2 extends  JFrame implements  ActionListener{
                 + aadhar + "','"
                  + seniorcitizen + "')";
                 c.s.executeUpdate(query);
+
+                setVisible(false);
+            new signup3(formno).setVisible(true);
             }
         } catch (Exception e ){
             System.out.println(e);
+
+            
         }
        }
     
